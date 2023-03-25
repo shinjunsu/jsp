@@ -1,0 +1,74 @@
+1. dbms 계정생성
+ - sqlplus system/1234
+ - create user [id] identified by [pw];
+	ex: create user jsp identified by jsp;
+ -  grant connect, resource to [id];
+	ex: grant connect, resource to jsp;
+
+2. ojdbc란
+ 2-1. jdbc란
+  - Java DataBase Connectivity
+  - 자바에서 데이터베이스에 접속/관리할 수 있게 
+  해주는 드라이버(API)
+  - 자바로 작성된 프로그램으로 DB와 관련된 작업을
+  처리할 수 있도록 제공되는 기능(코드)들을 모아놓은 것
+
+ 2-2. ojdbc란
+  - Oracle jdbc
+  - 오라클에서 제공하는 오라클 DB를 관리할 수 있도록
+  도와주는 JDBC이다.
+
+3. executeUpdate()
+ - 수행결과로 int 타입을 반환한다.
+ - select 구문을 제외한 다른 구문을 수행할 때 사용된다.
+ - insert / delete / update 관련 구문에서는 반영된
+ 레코드의 건수를 반환한다.
+ 
+4. resultset
+ - select 쿼리 실행 시 executeQuery() 메서드를 사용하여,
+ 실행 결과로 java.sql.ResultSet 형으로 리턴
+ - ResultSet 메서드
+	-> next()
+	-> getInt(int columnIndex)
+	: columnIndex 번째 컬럼의 값을 가지고 온다.
+	-> getString(String columnName)
+	: columnName값을 가지고 온다
+
+5. 자바빈즈
+ - JSP의 표준 액션 태그를 통해 접근할 수 있는 자바
+ 클래스로서 멤버변수(필드)와 setter, getter 메소드로
+ 이루어져있다.
+ - 자바빈즈 태그
+ - MemberBean
+	-> 객체 생성
+	java
+	: MemberBean member = new MemeberBean();
+	jsp
+	: <jsp:userBean class="패키지명.MemberBean" id="member">	
+
+	-> setter()
+	java 
+	: member.setName("자바학생");
+	jsp
+	: <jsp:setProperty name="member" property="name" value="자바학생"/>
+
+	-> getter()
+	java 
+	: member.getName();
+	jsp
+	: <jsp:getPropery name="member" property="name" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
